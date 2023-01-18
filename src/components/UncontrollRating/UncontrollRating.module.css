@@ -1,0 +1,28 @@
+
+.rating_wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    justify-items: center;
+    align-items: center;
+}
+.stars_wrapper {
+    display: flex;
+}
+.star {
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+    margin: 3px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.star:hover {
+    background-color: gold;
+    opacity: 50%;
+}
+
+.star_checked {
+    background-color: gold;
+}

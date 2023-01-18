@@ -8,11 +8,10 @@ type OnOffType = {
 
 type ActiveType = boolean
 export const OnOff = (props: OnOffType) => {
-    const [active, setActive] = useState<ActiveType>(true)
+    const [active, setActive] = useState<ActiveType>(false)
     const onClickHandler = (isActive: ActiveType) => {
         setActive(isActive)
     }
-
     const btnOn = s.btn + ' ' + (active ? s.btn_green : ' ')
     const btnOff = s.btn + ' ' + (!active ? s.btn_red : ' ')
 
