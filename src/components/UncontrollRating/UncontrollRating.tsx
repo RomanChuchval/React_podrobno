@@ -2,9 +2,6 @@ import React, {useState} from 'react';
 import s from './UncontrollRating.module.css'
 
 
-let starStyle = s.star
-let checkedStarStyle = s.star + ' ' + s.star_checked
-
 export const UncontrollRating = () => {
     const [showRating, setShowRating] = useState<boolean>(true)
 
