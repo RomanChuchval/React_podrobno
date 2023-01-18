@@ -54,13 +54,13 @@ type StarType = {
 
 const Star = (props: StarType) => {
 
-    let starStyle = s.star
-    let checkedStarStyle = s.star + ' ' + s.star_checked
+    const callback = () => {
+        props.onClickHandler(props.id)
+    }
+    let starStyle = s.star + ' ' + (props.checked ? s.star_checked : '' )
 
     return (
-        props.checked
-            ? <div onClick={() => props.onClickHandler(props.id)} className={checkedStarStyle}></div>
-            : <div onClick={() => props.onClickHandler(props.id)} className={starStyle}> </div>
+        <div onClick={callback} className={starStyle}></div>
     )
 }
 
