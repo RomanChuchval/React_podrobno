@@ -31,7 +31,6 @@ const RatingStars = () => {
         setValue(value)
     }
 
-
     return (
         <div className={s.stars_wrapper}>
             <Star checked={value >= 1} id={1} onClickHandler={onClickHandler}/>
@@ -49,16 +48,16 @@ type StarType = {
     checked: boolean
 }
 
-const Star = (props: StarType) => {
-
-    const callback = () => {
-        props.onClickHandler(props.id)
+const Star: React.FC<StarType> = (
+    {
+        id,
+        onClickHandler,
+        checked
     }
-    let starStyle = s.star + ' ' + (props.checked ? s.star_checked : '' )
-
-    return (
-        <div onClick={callback} className={starStyle}></div>
-    )
+) => {
+    const callback = () => onClickHandler(id)
+    let starStyle = s.star + ' ' + (checked ? s.star_checked : '')
+    return <div onClick={callback} className={starStyle}></div>
 }
 
 // const RatingStars = () => {
