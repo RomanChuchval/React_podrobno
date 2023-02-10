@@ -8,6 +8,7 @@ import {UncontrollRating} from "./components/UncontrollRating/UncontrollRating";
 import {ActiveType, OnOff} from "./OnOff";
 import {UncontrolledInput} from "./components/UncontrolledInput";
 import {ControlledSelect} from "./components/ControlledSelect";
+import {CustomSelect} from "./components/CustomSelect/CustomSelect";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <UncontrollRating/>
             <UncontrolledInput />
             <ControlledSelect/>
+            <CustomSelect/>
         </div>
     );
 }
