@@ -1,25 +1,25 @@
-import React, {useState} from 'react';
-import s from './OnOff.module.css'
+import React from 'react';
+import s from './components/OnOff.module.css'
 
 type OnOffType = {
-    callback?: () => void
-    name?: string
+    active: ActiveType
+    setActive: (active: ActiveType) => void
 }
 
-type ActiveType = boolean
+export type ActiveType = boolean
 export const OnOff = (props: OnOffType) => {
-    const [active, setActive] = useState<ActiveType>(false)
+
     const onClickHandler = (isActive: ActiveType) => {
-        setActive(isActive)
+        props.setActive(isActive)
     }
-    const btnOn = s.btn + ' ' + (active ? s.btn_green : ' ')
-    const btnOff = s.btn + ' ' + (!active ? s.btn_red : ' ')
+    const btnOn = s.btn + ' ' + (props.active ? s.btn_green : ' ')
+    const btnOff = s.btn + ' ' + (!props.active ? s.btn_red : ' ')
 
     return (
         <div className={s.btn_wrapper}>
             <button className={btnOn} onClick={() => onClickHandler(true)}>ON</button>
             <button className={btnOff} onClick={() => onClickHandler(false)}>OFF</button>
-            <Light active={active}/>
+            <Light active={props.active}/>
         </div>
     );
 };
