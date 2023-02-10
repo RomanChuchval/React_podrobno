@@ -7,6 +7,7 @@ import {UncontrollAccordion} from "./components/UncontrollAccordion/UncontrollAc
 import {UncontrollRating} from "./components/UncontrollRating/UncontrollRating";
 import {ActiveType, OnOff} from "./OnOff";
 import {UncontrolledInput} from "./components/UncontrolledInput";
+import {ControlledSelect} from "./components/ControlledSelect";
 
 
 function App() {
@@ -18,12 +19,13 @@ function App() {
     return (
         <div className={'wrapper'}>
             <Rating value={value} setValue={setValue}/>
-            <Accordion heading={'Contorlled Accordion'} collapsed={collapsed} setCollapsed={setCollapsed}/>
+            <Accordion heading={'Controlled Accordion'} collapsed={collapsed} setCollapsed={setCollapsed}/>
             <OnOff active={active} setActive={setActive}/>
             <UncontrolledOnOff/>
             <UncontrollAccordion />
             <UncontrollRating/>
             <UncontrolledInput />
+            <ControlledSelect/>
         </div>
     );
 }
