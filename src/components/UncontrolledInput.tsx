@@ -1,6 +1,6 @@
 import React, {useRef, useState} from 'react';
 
-export const UncontrolledInput = () => {
+const UncontrolledInputContainer = () => {
 
     const [value, setValue] = useState<string>('')
     const inputRef = useRef<HTMLInputElement>(null)
@@ -12,8 +12,12 @@ export const UncontrolledInput = () => {
 
     return (
         <div>
-            <input ref={inputRef}/> <button onClick={onSave}>Save</button> Value at useState: {value}
+            <input ref={inputRef}/>
+            <button onClick={onSave}>Save</button>
+            Value at useState: {value}
         </div>
     );
 };
+
+export const UncontrolledInput = React.memo(UncontrolledInputContainer)
 

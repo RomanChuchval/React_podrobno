@@ -5,7 +5,7 @@ type AccordionPropsType = {
     collapsed:boolean
     setCollapsed: (collapsed: boolean) => void
 }
-function Accordion(props: AccordionPropsType) {
+function AccordionContainer(props: AccordionPropsType) {
         const setCollapsed = () => {
             props.setCollapsed(!props.collapsed)
         }
@@ -18,11 +18,13 @@ function Accordion(props: AccordionPropsType) {
         )
     }
 
+    const Accordion = React.memo(AccordionContainer)
+
 type AccordionTitlePropsType = {
     title: string
     setCollapsed: () => void
 }
-function AccordionTitle(props: AccordionTitlePropsType) {
+function AccordionTitleContainer(props: AccordionTitlePropsType) {
 
     const onClickHandler = () => props.setCollapsed()
 
@@ -32,7 +34,9 @@ function AccordionTitle(props: AccordionTitlePropsType) {
     )
 }
 
-function AccordionBody() {
+const AccordionTitle = React.memo(AccordionTitleContainer)
+
+function AccordionBodyContainer() {
     console.log("AccordionBody rendered")
     return (
         <ul>
@@ -42,5 +46,7 @@ function AccordionBody() {
         </ul>
     )
 }
+
+const AccordionBody = React.memo(AccordionBodyContainer)
 
 export default Accordion;

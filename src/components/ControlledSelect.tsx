@@ -1,12 +1,11 @@
 import React, {ChangeEvent, useState} from 'react';
 
-export const ControlledSelect = () => {
+const ControlledSelectContainer = () => {
     const [selected, setSelected] = useState<string | undefined>(undefined)
 
-const onChangeSelectHandler =(e: ChangeEvent<HTMLSelectElement>) => {
-    setSelected(e.currentTarget.value)
-    console.log(e)
-}
+    const onChangeSelectHandler = (e: ChangeEvent<HTMLSelectElement>) => {
+        setSelected(e.currentTarget.value)
+    }
     return (
         <div>
             {selected}
@@ -20,4 +19,6 @@ const onChangeSelectHandler =(e: ChangeEvent<HTMLSelectElement>) => {
         </div>
     );
 };
+
+export const ControlledSelect = React.memo(ControlledSelectContainer)
 

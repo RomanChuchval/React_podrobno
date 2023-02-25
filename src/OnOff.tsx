@@ -7,7 +7,7 @@ type OnOffType = {
 }
 
 export type ActiveType = boolean
-export const OnOff = (props: OnOffType) => {
+ const OnOffContainer = (props: OnOffType) => {
 
     const onClickHandler = (isActive: ActiveType) => {
         props.setActive(isActive)
@@ -23,6 +23,9 @@ export const OnOff = (props: OnOffType) => {
         </div>
     );
 };
+
+export const OnOff = React.memo(OnOffContainer)
+
 
 type LightType = {
     active: ActiveType

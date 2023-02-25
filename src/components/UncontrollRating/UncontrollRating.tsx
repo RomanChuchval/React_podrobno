@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import s from './UncontrollRating.module.css'
 
 
-export const UncontrollRating = () => {
+const UncontrollRatingContainer = () => {
     const [showRating, setShowRating] = useState<boolean>(true)
 
     let ratingName = showRating ? 'hide rating' : 'show rating'
@@ -15,6 +15,8 @@ export const UncontrollRating = () => {
         </div>
     );
 };
+
+export const UncontrollRating = React.memo(UncontrollRatingContainer)
 
 const RatingTitle = () => {
     return (

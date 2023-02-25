@@ -9,9 +9,10 @@ import {ActiveType, OnOff} from "./OnOff";
 import {UncontrolledInput} from "./components/UncontrolledInput";
 import {ControlledSelect} from "./components/ControlledSelect";
 import {CustomSelect} from "./components/CustomSelect/CustomSelect";
+import {UseMemo} from "./components/Memo/useMemo";
 
 
-function App() {
+function AppContainer() {
 
     const [collapsed, setCollapsed] = useState<boolean>(false)
     const [value, setValue] = useState<RatingValueType>(0)
@@ -19,7 +20,7 @@ function App() {
 
     return (
         <div className={'wrapper'}>
-            <Rating value={value} setValue={setValue}/>
+            {/*<Rating value={value} setValue={setValue}/>*/}
             <Accordion heading={'Controlled Accordion'} collapsed={collapsed} setCollapsed={setCollapsed}/>
             <OnOff active={active} setActive={setActive}/>
             <UncontrolledOnOff/>
@@ -28,17 +29,11 @@ function App() {
             <UncontrolledInput />
             <ControlledSelect/>
             <CustomSelect/>
+            <UseMemo />
         </div>
     );
 }
-type PageTitlePropsType = {
-    title: string
-}
-function PageTitle(props: PageTitlePropsType) {
-    return (
-        <h1>{props.title}</h1>
-    )
-}
 
+const App = React.memo(AppContainer)
 
 export default App;

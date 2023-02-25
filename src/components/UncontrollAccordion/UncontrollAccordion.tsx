@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import s from './UncontrollAccordion.module.css'
-export const UncontrollAccordion = () => {
+const UncontrollAccordionContainer = () => {
 
     const [collapse, setCollapse]= useState<boolean>(false)
     let btnName = !collapse ? 'Show list' : 'Hide list'
@@ -16,6 +16,8 @@ export const UncontrollAccordion = () => {
         </div>
     );
 };
+
+export const UncontrollAccordion = React.memo(UncontrollAccordionContainer)
 
 type AccordionTitleType = {
     name: string
