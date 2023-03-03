@@ -7,7 +7,7 @@ export type SelectOptionType = {
     city: string
     population: number
 }
-const UseMemoContainer = () => {
+const UseMemo = () => {
 
     const [state, setState] = useState<Array<SelectOptionType>>([
         {country: 'Belarus', city: 'Minsk', population: 11},
@@ -24,28 +24,19 @@ const UseMemoContainer = () => {
     const [count, setCount] = useState<number>(0)
 
 
-    const filtredByUSA = useMemo(() => {
+    const filteredByUSA = useMemo(() => {
         // debugger
         return state.filter(el => el.country === 'USA')
     }, [state])
 
-    const filtredByPopulation = useMemo(() => {
+    const filteredByPopulation = useMemo(() => {
         // debugger
         return state.filter(el => el.population >= 10)
     }, [state])
 
-    // const filtredByBelarus = useMemo(() => {
-    //     return state.filter(el => el.country === 'Belarus')
-    // }, [state])
-    //
-    // const filtredByRussia = useMemo(() => {
-    //     return state.filter(el => el.country === 'Russia')
-    // }, [state])
-    //
-    //
-    // const filtredByUkraine = useMemo(() => {
-    //     return state.filter(el => el.country === 'Ukraine')
-    // }, [state])
+    const filteredByBelarus = useMemo(() => {
+        return state.filter(el => el.country === 'Belarus')
+    }, [state])
 
 
     return (
@@ -63,23 +54,14 @@ const UseMemoContainer = () => {
                 }}>+
                 </button>
             </div>
-            <p>USA</p>
-            <SelectContainer options={filtredByUSA}/>
-            <hr/>
-            <p>Population over 10</p>
-            <SelectContainer options={filtredByPopulation}/>
-            <hr/>
-            {/*<p>Belarus</p>*/}
-            {/*<Select options={filtredByBelarus}/>*/}
-            {/*<hr/>*/}
-            {/*<p>Russia</p>*/}
-            {/*<Select options={filtredByRussia}/>*/}
-            {/*<hr/>*/}
-            {/*<p>Ukraine</p>*/}
-            {/*<Select options={filtredByUkraine}/>*/}
-            {/*<hr/>*/}
+
+            <SelectContainer options={filteredByUSA}/>
+
+            <SelectContainer options={filteredByPopulation}/>
+
+            <SelectContainer options={filteredByBelarus}/>
         </>
     );
 };
-export const UseMemo = React.memo(UseMemoContainer)
+export const UseMemoContainer = React.memo(UseMemo)
 

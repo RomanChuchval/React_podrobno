@@ -9,7 +9,8 @@ import {ActiveType, OnOff} from "./OnOff";
 import {UncontrolledInput} from "./components/UncontrolledInput";
 import {ControlledSelect} from "./components/ControlledSelect";
 import {CustomSelect} from "./components/CustomSelect/CustomSelect";
-import {UseMemo} from "./components/Memo/useMemo";
+import {UseMemoContainer} from "./components/Memo/useMemo";
+import {CounterWithBooks} from "./components/useCallback/CounterWithBooks";
 
 
 function AppContainer() {
@@ -21,15 +22,16 @@ function AppContainer() {
     return (
         <div className={'wrapper'}>
             {/*<Rating value={value} setValue={setValue}/>*/}
-            <Accordion heading={'Controlled Accordion'} collapsed={collapsed} setCollapsed={setCollapsed}/>
-            <OnOff active={active} setActive={setActive}/>
-            <UncontrolledOnOff/>
-            <UncontrollAccordion />
-            <UncontrollRating/>
-            <UncontrolledInput />
-            <ControlledSelect/>
-            <CustomSelect/>
-            <UseMemo />
+            {/*<Accordion heading={'Controlled Accordion'} collapsed={collapsed} setCollapsed={setCollapsed}/>*/}
+            {/*<OnOff active={active} setActive={setActive}/>*/}
+            {/*<UncontrolledOnOff/>*/}
+            {/*<UncontrollAccordion />*/}
+            {/*<UncontrollRating/>*/}
+            {/*<UncontrolledInput />*/}
+            {/*<ControlledSelect/>*/}
+            {/*<CustomSelect/>*/}
+            <UseMemoContainer />
+            <CounterWithBooks/>
         </div>
     );
 }

@@ -19,15 +19,4 @@ export const Select: React.FC<SelectPropsType> = ({options}) => {
 
 export const SelectContainer = memo(Select)
 
-// function arePropsEqual(oldProp: SelectPropsType, newProp: SelectPropsType) {
-//     return (
-//         oldProp.options.length === newProp.options.length &&
-//         oldProp.options.every((oldPoint, index) => {
-//             const newPoint = newProp.options[index];
-//             return oldPoint.city === newPoint.city
-//                 && oldPoint.country === newPoint.country
-//                 &&oldPoint.population === newPoint.population;
-//         })
-//     )
-// }
 
