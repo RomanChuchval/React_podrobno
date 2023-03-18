@@ -11,6 +11,7 @@ import {ControlledSelect} from "./components/ControlledSelect";
 import {CustomSelect} from "./components/CustomSelect/CustomSelect";
 import {UseMemoContainer} from "./components/Memo/useMemo";
 import {CounterWithBooks} from "./components/useCallback/CounterWithBooks";
+import {Clock} from "./components/Clock/Clock";
 
 
 function AppContainer() {
@@ -30,8 +31,9 @@ function AppContainer() {
             {/*<UncontrolledInput />*/}
             {/*<ControlledSelect/>*/}
             {/*<CustomSelect/>*/}
-            <UseMemoContainer />
-            <CounterWithBooks/>
+            {/*<UseMemoContainer />*/}
+            {/*<CounterWithBooks/>*/}
+            <Clock/>
         </div>
     );
 }
